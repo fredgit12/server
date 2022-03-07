@@ -23,20 +23,7 @@ pipeline{
             }
         }
     
-    stage('Deploy App on k8s') {
-      steps {
-            sshagent(['']) {
-                sh "scp -o StrictHostKeyChecking=no nodejsapp.yaml root@194.233.162.114:/home/ubuntu"
-            script {
-                try{
-                    sh "ssh root@194.233.162.114 kubectl create -f ."
-                }catch(error){
-                    sh "ssh root@194.233.162.114 kubectl create -f ."
-                            }   
-                }
-            }
-        }
-      
+          
     }
     }
     }
