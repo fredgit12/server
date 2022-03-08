@@ -31,6 +31,8 @@ spec:
   selector:
     app: nodejs-app
   type: LoadBalancer
+  externalIPs:
+  - 194.233.162.114
   ports:
   - name: http
     targetPort: 3000
